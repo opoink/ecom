@@ -1,0 +1,13 @@
+/App/Ext/*/
+/App/Theme/*/
+/App/node/node_modules/*/
+/App/node/src/var/*
+/Var/*/
+/etc/*
+!/etc/.htaccess
+/public/*
+/public/deploy*
+/public/generation.php
+/vendor
+/composer.phar
+/composer.lock
