@@ -1,0 +1,165 @@
+<div class="DefaultHeader">
+	<div class="">
+		<div class="backdrop" v-on:click="vue.showMenu()"></div>
+		<div id="nav-container" class="card rounded-0 border-0">
+			<div id="nav-container-header" class="bg-default card-header rounded-0 p-0 border-0">
+				<div id="nav-header-items" class="d-flex nav-items">
+					<router-link to="/" @click.native="vue.showMenu()" class="nav-item p-2 d-flex align-items-center justify-content-center">
+						<i class="ti-home"></i>
+					</router-link>
+					<router-link to="/search" @click.native="vue.showMenu()" class="nav-item p-2 d-flex align-items-center justify-content-center">
+						<i class="ti-user"></i>
+					</router-link>
+				</div>
+			</div>
+			<div id="nav-container-body" class="p-0 card-body rounded-0 overflow-y-auto">
+				<ul id="nav-body-items">
+					<li>
+						<router-link to="/" class="d-flex justify-content-between">
+							<p class="m-0">Mobile Phones</p>
+							<p class="m-0"><i class="ti-angle-right"></i></p>
+						</router-link>
+					</li>
+					<li>
+						<router-link to="/" class="d-flex justify-content-between">
+							<p class="m-0">Mobile Phones</p>
+							<p class="m-0"><i class="ti-angle-right"></i></p>
+						</router-link>
+					</li>
+					<li>
+						<router-link to="/" class="d-flex justify-content-between">
+							<p class="m-0">Mobile Phones</p>
+							<p class="m-0"><i class="ti-angle-right"></i></p>
+						</router-link>
+					</li>
+					<li>
+						<router-link to="/" class="d-flex justify-content-between">
+							<p class="m-0">Mobile Phones</p>
+							<p class="m-0"><i class="ti-angle-right"></i></p>
+						</router-link>
+					</li>
+					<li>
+						<router-link to="/" class="d-flex justify-content-between">
+							<p class="m-0">Mobile Phones</p>
+							<p class="m-0"><i class="ti-angle-right"></i></p>
+						</router-link>
+					</li>
+				</ul>
+			</div>
+			<div id="nav-container-footer" class="bg-default card-footer rounded-0 p-0 border-0">
+				<div id="nav-footer-items" class="d-flex nav-items">
+					<router-link to="#" @click.native="vue.showMenu()" class="nav-item p-2 d-flex align-items-center justify-content-center">
+						<i class="ti-close"></i>
+					</router-link>
+					<router-link to="#" class="nav-item p-2 d-flex align-items-center justify-content-center">
+						<i class="ti-email"></i>
+					</router-link>
+					<router-link to="#" class="nav-item p-2 d-flex align-items-center justify-content-center">
+						<i class="ti-headphone-alt"></i>
+					</router-link>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-container">
+		<div class="header-main">
+			<div class="container d-lg-none">
+				<div class="d-flex headers-items align-items-center">
+					<button class="nav-menu" v-on:click="vue.showMenu()">
+						<i class="ti-menu"></i>
+					</button>
+					<div class="logo-m text-center">
+						<img src="./../../../../images/logo-m.png">
+					</div>
+					<button class="nav-menu text-right in-right">
+						<i class="ti-search"></i>
+					</button>
+					<button class="nav-menu text-right in-right cart">
+						<div class="cart-badge">300</div>
+						<i class="ti-shopping-cart"></i>
+					</button>
+				</div>
+			</div>
+
+
+
+			<div class="d-none d-lg-block">
+				<div id="header-top" class="header-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-6">
+								<div id="header-top-items" class="d-flex align-items-center">
+									<div class="header-top-item pr-3 border-right">
+										<router-link to="/track">
+											<i class="ti-headphone-alt mr-2 fc-main"></i> (046) 123 4567
+										</router-link>
+									</div>
+									<div class="header-top-item px-3 border-right">
+										<i class="ti-email mr-2 fc-main"></i> <a href="mailto: support@opoink.com">support@opoink.com</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div id="header-top-items" class="d-flex align-items-center justify-content-end">
+									<div class="header-top-item px-3 border-left">
+										<router-link to="/track">
+											<i class="ti-truck mr-2"></i> Track Your Order
+										</router-link>
+									</div>
+									<div class="header-top-item pl-3 border-left">
+										<i class="ti-user mr-2"></i> <a href="javascript:void(0)">register</a> <span class="text-black-50">or</span> <a href="javascript:void(0)">login</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+				<div id="header-body" class="header-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<div class="logo-l text-center">
+									<router-link to="/">
+										<img src="./../../../../images/logo-m.png">
+									</router-link>
+								</div>
+							</div>
+							
+							<div class="col-6">
+								<div class="search-l d-flex align-items-center">
+									<div class="search-container">
+										<input 
+											type="text" 
+											placeholder="Search an Item" 
+											v-model="vue.searchKey" 
+											v-on:keyup="vue.checkEnter($event)"
+										/>
+										<button v-on:click="vue.startSearch()"><i class="ti-search"></i></button>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-3">
+								<div id="cart-items" class="d-flex align-items-center justify-content-end">
+									<div class="cart-item-icon">
+										<i class="ti-heart"></i>
+									</div>
+									<div class="cart-item-icon">
+										<div class="cart-badge">300</div>
+										<i class="ti-shopping-cart"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="header-footer"></div>
+			</div>
+
+
+
+		</div>
+	</div>
+</div>

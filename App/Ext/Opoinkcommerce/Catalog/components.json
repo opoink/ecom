@@ -1,0 +1,20 @@
+[
+    {
+        "component_name": "ProductSearch",
+        "vendor": "Opoinkcommerce",
+        "module": "Catalog",
+        "location": "Opoinkcommerce\/Catalog\/View\/vue\/components\/pages\/ProductSearch\/ProductSearch.component.ts"
+    },
+    {
+        "component_name": "CategoryLarge",
+        "vendor": "Opoinkcommerce",
+        "module": "Catalog",
+        "location": "Opoinkcommerce\/Catalog\/View\/vue\/components\/defaults\/CategoryLarge\/CategoryLarge.component.ts",
+        "inject_to": [
+            {
+                "component_name": "DefaultHeader",
+                "element_id": "header-footer"
+            }
+        ]
+    }
+]

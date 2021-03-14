@@ -1,0 +1,20 @@
+[
+    {
+        "component_name": "Home",
+        "vendor": "Opoinkcommerce",
+        "module": "Base",
+        "location": "Opoinkcommerce\/Base\/View\/vue\/components\/pages\/Home\/Home.component.ts"
+    },
+    {
+        "component_name": "DefaultHeader",
+        "vendor": "Opoinkcommerce",
+        "module": "Base",
+        "location": "Opoinkcommerce\/Base\/View\/vue\/components\/defaults\/DefaultHeader\/DefaultHeader.component.ts"
+    },
+    {
+        "component_name": "DefaultFooter",
+        "vendor": "Opoinkcommerce",
+        "module": "Base",
+        "location": "Opoinkcommerce\/Base\/View\/vue\/components\/defaults\/DefaultFooter\/DefaultFooter.component.ts"
+    }
+]

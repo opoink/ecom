@@ -52,12 +52,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.34",
-    "@fortawesome/free-brands-svg-icons": "^5.15.2",
-    "@fortawesome/free-regular-svg-icons": "^5.15.2",
-    "@fortawesome/free-solid-svg-icons": "^5.15.2",
-    "@fortawesome/vue-fontawesome": "^3.0.0-3",
     "jquery": "^3.5.1",
     "query": "^0.2.0",
     "remove": "^0.1.5"

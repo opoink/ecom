@@ -1,0 +1,188 @@
+@import "./../../../../css/cssvars/color.scss";
+
+.DefaultHeader{
+    .header-container {
+        background: $theme-main;
+        box-shadow: 0 0 8px rgba(201, 201, 201, 0.75);
+
+        .header-main {
+            padding: 10px 0;
+
+            .headers-items {
+                height: 45px;
+
+                .nav-menu {
+                    border: 0;
+                    height: 40px;
+                    width: 40px;
+                    padding: 0;
+                    text-align: left;
+                    font-size: 1.6rem;
+                    color: $font-main-color;
+                    background: transparent;
+
+                    &.in-right {
+                        font-size: 1.2rem;
+                    }
+
+                    &.cart {
+                        position: relative;
+                        .cart-badge {
+                            border-radius: 7.5px;
+                            background: $theme-cart-badge;
+                            position: absolute;
+                            padding: 2px 5px 0px 5px;
+                            line-height: 0.625rem;
+                            font-size: 0.625rem;
+                            color: $font-white;
+                            min-width: 15px;
+                            height: 15px;
+                            right: 10px;
+                            top: 0px;
+                        }
+                    }
+                }
+
+                .logo-m {
+                    height: 35px;
+                    width: calc(100% - 120px);
+                    padding: 0px 20px;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    #nav-container {
+        width: 300px;
+        background: $theme-nav-bg;
+        position: fixed;
+        height: 100%;
+        z-index: 99999;
+        left: -300px;
+        transition: all 0.3s ease 0s;
+
+        &.active {
+            transform: translate3d(300px, 0px, 0px);
+        }
+    }
+
+    .nav-items {
+        .nav-item {
+            height: 50px;
+            width: 100%;
+        }
+    }
+    #nav-body-items {
+        padding: 0;
+        list-style: none;
+
+        li {
+            padding: 0;
+            a {
+                cursor: pointer;
+                padding: 10px;
+                &:hover {
+                    background-color: #f3f0f0;
+                }
+            }
+        }
+    }
+
+    .cart-badge {
+        border-radius: 7.5px;
+        background: $theme-cart-badge;
+        position: absolute;
+        padding: 2px 5px 0px 5px;
+        line-height: 0.625rem;
+        font-size: 0.625rem;
+        color: $font-white;
+        min-width: 15px;
+        height: 15px;
+        right: 10px;
+        top: 0px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .DefaultHeader {
+        .header-container {
+            background: transparent;
+            box-shadow: none;
+
+            .header-main {
+                padding: 0;
+            }
+        }
+        .header-top {
+            padding: 5px 0px;
+            border-bottom: 1px solid $theme-border-color;
+        }
+        .header-body {
+            padding: 20px 0px;
+            .logo-l {
+                width: 70%;
+    
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .search-l {
+                height: 100%;
+                .search-container {
+                    position: relative;
+                    width: 100%;
+
+                    button {
+                        position: absolute;
+                        height: 100%;
+                        width: 60px;
+                        right: 0;
+                        background: $theme-main;
+                        border-top-right-radius: 25px;
+                        border-bottom-right-radius: 25px; 
+                        cursor: pointer;
+                        border: 0;
+
+                        &:hover {
+                            background: $theme-main-hover;
+                        }
+                    }
+
+                    input {
+                        border: 2px solid $theme-main;
+                        width: 100%;
+                        height: 50px;
+                        border-radius: 25px;
+                        padding: 0px 0px 0px 15px;
+                    }
+                }
+            }
+        }
+        #cart-items {
+            height: 100%;
+            .cart-item-icon {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                position: relative;
+                cursor: pointer;
+
+                &:hover {
+                    color: $font-a-hover;
+                }
+                .cart-badge {
+                    top: 5px;
+                }
+            }
+        }
+    }
+}

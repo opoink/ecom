@@ -76,7 +76,8 @@ var config = (env) => {
                 {
                     test: /\.s(a|c)ss$/,
                     use: [
-                        isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+                        // isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+                        MiniCssExtractPlugin.loader,
                         {
                             loader: 'css-loader',
                             options: {
@@ -103,7 +104,7 @@ var config = (env) => {
                 {
                     test: /bootstrap\.min\.css$/,
                     use: [
-                        isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+                        MiniCssExtractPlugin.loader,
                         {
                             loader: 'css-loader',
                             options: {
@@ -124,6 +125,19 @@ var config = (env) => {
                                 name: '[name].[ext]',
                                 outputPath: 'assets/images/',
                                 publicPath: '/public/vuedist/assets/images'
+                            }
+                        }
+                    ]
+                },
+                {
+                    test: /\.(eot|woff|ttf)$/i,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'assets/fonts/icon',
+                                publicPath: '/public/vuedist/assets/fonts/icon'
                             }
                         }
                     ]
