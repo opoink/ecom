@@ -1,0 +1,26 @@
+<li id="r-back-office-catalog" class="AdminMenuCatalog" v-bind:class="{'active': vue.isChildShow}">
+	<router-link to="/back/office/catalog" event="" @click.native.prevent="vue.showChild()" v-bind:class="{'active': vue.isChildShow}" >
+		<div class="admin-menu-icon">
+			<i class="fas fa-ellipsis-v"></i>
+			<i class="fas fa-ellipsis-v"></i>
+			<i class="fas fa-ellipsis-v"></i>
+		</div>
+		<span>Catalog</span>
+	</router-link>
+	<div class="backdrop" v-bind:class="{'d-block': vue.isChildShow}" v-on:click="vue.showChild()"></div>
+	<div class="children" v-bind:class="{'active': vue.isChildShow}">
+		<div class="children-col">
+			<ul>
+				<li class="children-link">
+					<p class="title">Links</p>
+				</li>
+				<li class="children-link">
+					<router-link to="/back/office/catalog/products">Products</router-link>
+				</li>
+				<li class="children-link">
+					<router-link to="/back/office/catalog/categories">Categories</router-link>
+				</li>
+			</ul>
+		</div>
+	</div>
+</li>

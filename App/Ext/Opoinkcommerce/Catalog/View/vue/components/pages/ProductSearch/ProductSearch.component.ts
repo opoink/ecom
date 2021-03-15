@@ -16,6 +16,9 @@ let ProductSearchComponent = Vue.component(name, {
     beforeMount: (f) => {
         ProductSearch.init();
     },
+    beforeRouteEnter (to, from, next) {
+        
+    },
     watch: {
         $route(to, from) {
             if(typeof to.query['search'] != 'undefined'){

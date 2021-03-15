@@ -16,5 +16,24 @@
                 "element_id": "header-footer"
             }
         ]
+    },
+    {
+        "component_name": "AdminMenuCatalog",
+        "vendor": "Opoinkcommerce",
+        "module": "Catalog",
+        "location": "Opoinkcommerce\/Catalog\/View\/vue\/components\/admin\/defaults\/AdminMenuCatalog\/AdminMenuCatalog.component.ts",
+        "inject_to": [
+            {
+                "component_name": "AdminSideMenu",
+                "element_id": "r-back-office",
+                "inject_type": "after"
+            }
+        ]
+    },
+    {
+        "component_name": "AdminProductCategories",
+        "vendor": "Opoinkcommerce",
+        "module": "Catalog",
+        "location": "Opoinkcommerce\/Catalog\/View\/vue\/components\/admin\/pages\/AdminProductCategories\/AdminProductCategories.component.ts"
     }
 ]

@@ -14,3 +14,17 @@ Vue.component('categorylarge', function (resolve, reject) {
 	.then(component => {resolve(component)});
 });
 /**** CategoryLarge ****/
+
+/**** AdminMenuCatalog ****/
+Vue.component('adminmenucatalog', function (resolve, reject) {
+	import(/* webpackChunkName: "AdminMenuCatalogComponent" */ './View/vue/components/admin/defaults/AdminMenuCatalog/AdminMenuCatalog.component')
+	.then(component => {resolve(component)});
+});
+/**** AdminMenuCatalog ****/
+
+/**** AdminProductCategories ****/
+Vue.component('adminproductcategories', function (resolve, reject) {
+	import(/* webpackChunkName: "AdminProductCategoriesComponent" */ './View/vue/components/admin/pages/AdminProductCategories/AdminProductCategories.component')
+	.then(component => {resolve(component)});
+});
+/**** AdminProductCategories ****/

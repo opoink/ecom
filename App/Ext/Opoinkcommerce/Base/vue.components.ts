@@ -26,3 +26,24 @@ Vue.component('defaultfooter', function (resolve, reject) {
 	.then(component => {resolve(component)});
 });
 /**** DefaultFooter ****/
+
+/**** AdminHome ****/
+Vue.component('adminhome', function (resolve, reject) {
+	import(/* webpackChunkName: "AdminHomeComponent" */ './View/vue/components/admin/pages/AdminHome/AdminHome.component')
+	.then(component => {resolve(component)});
+});
+/**** AdminHome ****/
+
+/**** AdminSideMenu ****/
+Vue.component('adminsidemenu', function (resolve, reject) {
+	import(/* webpackChunkName: "AdminSideMenuComponent" */ './View/vue/components/admin/defaults/AdminSideMenu/AdminSideMenu.component')
+	.then(component => {resolve(component)});
+});
+/**** AdminSideMenu ****/
+
+/**** AdminMainHeader ****/
+Vue.component('adminmainheader', function (resolve, reject) {
+	import(/* webpackChunkName: "AdminMainHeaderComponent" */ './View/vue/components/admin/defaults/AdminMainHeader/AdminMainHeader.component')
+	.then(component => {resolve(component)});
+});
+/**** AdminMainHeader ****/

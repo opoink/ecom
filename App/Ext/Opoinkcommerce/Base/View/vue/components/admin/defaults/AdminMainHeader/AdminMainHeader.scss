@@ -1,0 +1,8 @@
+@import "./../../../../../css/cssvars/admin.colors.scss";
+
+.admin-main-header {
+    position: relative;
+    height: 50px;
+    z-index: 99999;
+    background-color: $theme-main;
+}

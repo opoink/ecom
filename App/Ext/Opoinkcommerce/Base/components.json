@@ -16,5 +16,23 @@
         "vendor": "Opoinkcommerce",
         "module": "Base",
         "location": "Opoinkcommerce\/Base\/View\/vue\/components\/defaults\/DefaultFooter\/DefaultFooter.component.ts"
+    },
+    {
+        "component_name": "AdminHome",
+        "vendor": "Opoinkcommerce",
+        "module": "Base",
+        "location": "Opoinkcommerce\/Base\/View\/vue\/components\/admin\/pages\/AdminHome\/AdminHome.component.ts"
+    },
+    {
+        "component_name": "AdminSideMenu",
+        "vendor": "Opoinkcommerce",
+        "module": "Base",
+        "location": "Opoinkcommerce\/Base\/View\/vue\/components\/admin\/defaults\/AdminSideMenu\/AdminSideMenu.component.ts"
+    },
+    {
+        "component_name": "AdminMainHeader",
+        "vendor": "Opoinkcommerce",
+        "module": "Base",
+        "location": "Opoinkcommerce\/Base\/View\/vue\/components\/admin\/defaults\/AdminMainHeader\/AdminMainHeader.component.ts"
     }
 ]
