@@ -4,7 +4,7 @@ import injector from './../../../../../../../../node/src/core/dom';
 import DefaultHeader from './DefaultHeader';
 import './DefaultHeader.scss';
 
-let name = 'defaultheader';
+let name = 'vue-defaultheader';
 let tpl = injector.inject(require('./DefaultHeader.html'), name);
 
 let DefaultHeaderComponent = Vue.component(name, {

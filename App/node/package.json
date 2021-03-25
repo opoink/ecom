@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "webpack",
     "build": "node ./opoink.module && webpack",
     "build:prod": "node ./opoink.module && webpack --env prod",
     "serve": "node ./opoink.module && webpack --watch",
@@ -26,6 +25,7 @@
     "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^4.6.0",
     "clean-webpack-plugin": "^3.0.0",
+    "crypto": "^1.0.1",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^1.2.0",
     "exec-php": "0.0.5",

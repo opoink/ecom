@@ -4,7 +4,7 @@ import injector from './../../../../../../../../node/src/core/dom';
 import DefaultFooter from './DefaultFooter';
 // import './DefaultFooter.scss';
 
-let name = 'defaultfooter';
+let name = 'vue-defaultfooter';
 let tpl = injector.inject(require('./DefaultFooter.html'), name);
 
 let DefaultFooterComponent = Vue.component(name, {

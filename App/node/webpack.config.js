@@ -8,12 +8,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const WatchOpoinkThemeFiles = require('./src/core/plugins/watch.opoink.theme.files');
+const ComponentAttrId = require('./src/core/lib/component.attr.id');
+var componentAttrId = new ComponentAttrId();
 
 var config = (env) => {
 
     let isProd = env.prod ? true : false;
     let mode = env.prod ? 'production' : 'development';
     var plugins = [];
+
+    let opoinkWatcher = new WatchOpoinkThemeFiles({
+        files: [],
+        dirs: [],
+        publicPath: path.resolve(__dirname, "./../../public/vuedist")
+    })
+
+    plugins.push(opoinkWatcher);
 
     plugins.push(new webpack.ProvidePlugin({
         $: 'jquery',
@@ -31,8 +42,16 @@ var config = (env) => {
     plugins.push(new CleanWebpackPlugin({
         dry: false,
         dangerouslyAllowCleanPatternsOutsideProject: true,
-        cleanBeforeEveryBuildPatterns: [path.resolve(__dirname, "./../../public/vuedist")]
+        cleanBeforeEveryBuildPatterns: [path.resolve(__dirname, "./../../public/vuedist")],
+        cleanStaleWebpackAssets: false,
+        protectWebpackAssets: true
     }));
+
+    let _outPut = {
+        path: path.resolve(__dirname, "./../../public/vuedist"),
+        filename: isProd ? 'js/[chunkhash].[name].bundle.js' : 'js/[name].bundle.js',
+        chunkFilename: isProd ? 'js/chunks/[chunkhash].[name].js' : 'js/chunks/[name].js'
+    }
 
     return {
         mode: mode,
@@ -42,11 +61,7 @@ var config = (env) => {
             maxEntrypointSize: 4096000,
             maxAssetSize: 4096000
         },
-        output: {
-            path: path.resolve(__dirname, "./../../public/vuedist"),
-            filename: isProd ? 'js/[chunkhash].[name].bundle.js' : 'js/[name].bundle.js',
-            chunkFilename: isProd ? 'js/chunks/[chunkhash].[name].js' : 'js/chunks/[name].js'
-        },
+        output: _outPut,
         optimization: {
             splitChunks: {
                 cacheGroups: {
@@ -71,12 +86,14 @@ var config = (env) => {
         },
         module: {
             rules: [
-                { test: /\.ts$/, use: 'ts-loader' },
+                { 
+                    test: /\.ts$/, 
+                    use: ['ts-loader']
+                },
                 { test: /\.js$/, use: 'babel-loader' },
                 {
                     test: /\.s(a|c)ss$/,
                     use: [
-                        // isProd ? MiniCssExtractPlugin.loader : 'style-loader',
                         MiniCssExtractPlugin.loader,
                         {
                             loader: 'css-loader',
@@ -90,12 +107,22 @@ var config = (env) => {
                             loader: 'postcss-loader'
                         },
                         {
-                            loader: 'opoink-url-loader'
+                            loader: 'opoink-css-modules-loader',
+                            options: {
+                                watcher: opoinkWatcher,
+                                componentAttrId: componentAttrId
+                            }
                         },
                         {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: isProd
+                            }
+                        },
+                        {
+                            loader: 'opoink-css-theme-loader',
+                            options: {
+                                watcher: opoinkWatcher
                             }
                         }
                     ]
@@ -104,7 +131,7 @@ var config = (env) => {
                 {
                     test: /bootstrap\.min\.css$/,
                     use: [
-                        MiniCssExtractPlugin.loader,
+                        isProd ? MiniCssExtractPlugin.loader : 'style-loader',
                         {
                             loader: 'css-loader',
                             options: {
@@ -115,7 +142,27 @@ var config = (env) => {
                         }
                     ]
                 },
-                { test: /\.html$/, use: 'html-loader' },
+                { 
+                    test: /\.html$/, 
+                    use: [
+                        'html-loader',
+                        {
+                            loader: 'opoink-html',
+                            options: {
+                                addFileLocation: isProd,
+                                componentAttrId: componentAttrId
+                            }
+                        },
+                        {
+                            loader: 'opoink-html-theme-loader',
+                            options: {
+                                watcher: opoinkWatcher,
+                                outputPath: 'assets/images/',
+                                publicPath: '/public/vuedist/assets/images'
+                            }
+                        }
+                    ] 
+                },
                 {
                     test: /\.(gif|png|jpe?g|svg)$/i,
                     use: [
@@ -130,7 +177,7 @@ var config = (env) => {
                     ]
                 },
                 {
-                    test: /\.(eot|woff|ttf)$/i,
+                    test: /\.(eot|woff|woff2|ttf)$/i,
                     use: [
                         {
                             loader: 'file-loader',
@@ -146,7 +193,7 @@ var config = (env) => {
         },
         resolve: {
             alias: { 
-                vue: path.resolve(__dirname, './node_modules/vue/dist/vue.esm')
+                vue: path.resolve(__dirname, './node_modules/vue/dist/vue.min')
             },
             extensions: ['.ts', '.js', '.scss'],
             fallback: {

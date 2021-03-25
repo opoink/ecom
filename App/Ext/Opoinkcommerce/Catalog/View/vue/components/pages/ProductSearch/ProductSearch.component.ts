@@ -4,7 +4,7 @@ import injector from './../../../../../../../../node/src/core/dom';
 import ProductSearch from './ProductSearch';
 // import './ProductSearch.scss';
 
-let name = 'productsearch';
+let name = 'vue-productsearch';
 let tpl = injector.inject(require('./ProductSearch.html'), name);
 
 let ProductSearchComponent = Vue.component(name, {
@@ -17,7 +17,7 @@ let ProductSearchComponent = Vue.component(name, {
         ProductSearch.init();
     },
     beforeRouteEnter (to, from, next) {
-        
+        next();
     },
     watch: {
         $route(to, from) {

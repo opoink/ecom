@@ -4,7 +4,7 @@ import injector from './../../../../../../../../../node/src/core/dom';
 import AdminSideMenu from './AdminSideMenu';
 import './AdminSideMenu.scss';
 
-let name = 'adminsidemenu';
+let name = 'vue-adminsidemenu';
 let tpl = injector.inject(require('./AdminSideMenu.html'), name);
 
 let AdminSideMenuComponent = Vue.component(name, {

@@ -5,7 +5,8 @@ const AdminHome = () => import(/* webpackChunkName: "AdminHome" */ './View/vue/c
 
 let routes = [
     { path: '/', component: HomeComponent },
-    { path: '/back/office/home', component: AdminHome }
+    { path: '/backoffice', component: AdminHome },
+    { path: '/backoffice/dashboard', component: AdminHome }
 ]
 
 routes.forEach(route => {

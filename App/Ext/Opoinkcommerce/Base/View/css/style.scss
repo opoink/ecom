@@ -1,5 +1,11 @@
 @import "./cssvars/color.scss";
 @import "./themify-icons.scss";
+@import "./font-awesome/scss/fontawesome.scss";
+@import "./font-awesome/scss/fa-regular.scss";
+@import "./font-awesome/scss/fa-solid.scss";
+@import "./font-awesome/scss/fa-brands.scss";
+
+@import "./admin.scss";
 
 body {
     color: $font-main-color;

@@ -4,7 +4,7 @@ import injector from './../../../../../../../../node/src/core/dom';
 import Home from './Home';
 // import './Home.scss';
 
-let name = 'home';
+let name = 'vue-home';
 let tpl = injector.inject(require('./Home.html'), name);
 
 let HomeComponent = Vue.component(name, {

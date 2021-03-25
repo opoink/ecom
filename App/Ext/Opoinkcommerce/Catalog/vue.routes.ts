@@ -6,7 +6,7 @@ const ProductSearch = () => import(/* webpackChunkName: "ProductSearch" */ './Vi
 const AdminProductCategories = () => import(/* webpackChunkName: "AdminProductCategories" */ './View/vue/components/admin/pages/AdminProductCategories/AdminProductCategories.component');
 
 let routes = [
-    { path: '/back/office/catalog/categories', component: AdminProductCategories },
+    { path: '/backoffice/catalog/categories', component: AdminProductCategories },
     { path: '/products', component: ProductSearch },
     { path: '/products/:search', component: ProductSearch }
 ]

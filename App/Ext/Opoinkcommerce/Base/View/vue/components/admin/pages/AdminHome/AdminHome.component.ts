@@ -4,7 +4,7 @@ import injector from './../../../../../../../../../node/src/core/dom';
 import AdminHome from './AdminHome';
 // import './AdminHome.scss';
 
-let name = 'adminhome';
+let name = 'vue-adminhome';
 let tpl = injector.inject(require('./AdminHome.html'), name);
 
 let AdminHomeComponent = Vue.component(name, {

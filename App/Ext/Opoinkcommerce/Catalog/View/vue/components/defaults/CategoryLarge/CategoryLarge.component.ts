@@ -4,7 +4,7 @@ import injector from './../../../../../../../../node/src/core/dom';
 import CategoryLarge from './CategoryLarge';
 import './CategoryLarge.scss';
 
-let name = 'categorylarge';
+let name = 'vue-categorylarge';
 let tpl = injector.inject(require('./CategoryLarge.html'), name);
 
 let CategoryLargeComponent = Vue.component(name, {
