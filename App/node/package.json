@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node ./opoink.module && webpack",
-    "build:prod": "node ./opoink.module && webpack --env prod",
-    "serve": "node ./opoink.module && webpack --watch",
-    "serve:prod": "node ./opoink.module && webpack --watch --env prod",
-    "watch": "node ./opoink.module && webpack --watch",
-    "watch:prod": "node ./opoink.module && webpack --watch --env prod"
+    "build": "webpack",
+    "build:prod": "webpack --env prod",
+    "serve": "webpack --watch",
+    "serve:prod": "webpack --watch --env prod",
+    "watch": "webpack --watch",
+    "watch:prod": "webpack --watch --env prod"
   },
   "author": "Opoink",
   "license": "MIT",

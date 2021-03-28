@@ -1,0 +1,15 @@
+@import './../../../../../../../Base/View/css/cssvars/admin.colors.scss';
+
+.AdminUserLogin {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $theme-main;
+
+    .login-box {
+        width: 400px;
+        height: 500px;
+        background: #fbfbfb;
+        padding: 40px;
+    }
+}

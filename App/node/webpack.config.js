@@ -22,15 +22,12 @@ var config = (env) => {
         files: [],
         dirs: [],
         publicPath: path.resolve(__dirname, "./../../public/vuedist")
-    })
-
-    plugins.push(opoinkWatcher);
+    });
 
     plugins.push(new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery'
     }));
-    
     plugins.push(new HtmlWebpackPlugin({
         inject: 'body',
         template: './src/index.html',
@@ -46,6 +43,7 @@ var config = (env) => {
         cleanStaleWebpackAssets: false,
         protectWebpackAssets: true
     }));
+    plugins.push(opoinkWatcher);
 
     let _outPut = {
         path: path.resolve(__dirname, "./../../public/vuedist"),

@@ -35,5 +35,11 @@
         "vendor": "Opoinkcommerce",
         "module": "Catalog",
         "location": "Opoinkcommerce\/Catalog\/View\/vue\/components\/admin\/pages\/AdminProductCategories\/AdminProductCategories.component.ts"
+    },
+    {
+        "component_name": "AdminProductList",
+        "vendor": "Opoinkcommerce",
+        "module": "Catalog",
+        "location": "Opoinkcommerce\/Catalog\/View\/vue\/components\/admin\/pages\/AdminProductList\/AdminProductList.component.ts"
     }
 ]

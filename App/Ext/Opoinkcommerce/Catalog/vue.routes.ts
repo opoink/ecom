@@ -4,9 +4,11 @@ const ProductSearch = () => import(/* webpackChunkName: "ProductSearch" */ './Vi
 
 /** admin routes */
 const AdminProductCategories = () => import(/* webpackChunkName: "AdminProductCategories" */ './View/vue/components/admin/pages/AdminProductCategories/AdminProductCategories.component');
+const AdminProductList = () => import(/* webpackChunkName: "AdminProductCategories" */ './View/vue/components/admin/pages/AdminProductList/AdminProductList.component');
 
 let routes = [
     { path: '/backoffice/catalog/categories', component: AdminProductCategories },
+    { path: '/backoffice/catalog/products', component: AdminProductList },
     { path: '/products', component: ProductSearch },
     { path: '/products/:search', component: ProductSearch }
 ]

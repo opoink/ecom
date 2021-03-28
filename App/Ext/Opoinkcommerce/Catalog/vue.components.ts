@@ -28,3 +28,10 @@ Vue.component('vue-adminproductcategories', function (resolve, reject) {
 	.then(component => {resolve(component)});
 });
 /**** AdminProductCategories ****/
+
+/**** AdminProductList ****/
+Vue.component('adminproductlist', function (resolve, reject) {
+	import(/* webpackChunkName: "AdminProductListComponent" */ './View/vue/components/admin/pages/AdminProductList/AdminProductList.component')
+	.then(component => {resolve(component)});
+});
+/**** AdminProductList ****/

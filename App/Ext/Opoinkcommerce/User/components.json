@@ -1,0 +1,8 @@
+[
+    {
+        "component_name": "AdminUserLogin",
+        "vendor": "Opoinkcommerce",
+        "module": "User",
+        "location": "Opoinkcommerce\/User\/View\/vue\/components\/admin\/pages\/AdminUserLogin\/AdminUserLogin.component.ts"
+    }
+]

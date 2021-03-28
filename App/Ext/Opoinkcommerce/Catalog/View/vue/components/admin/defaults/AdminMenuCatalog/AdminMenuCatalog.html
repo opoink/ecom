@@ -15,10 +15,10 @@
 					<p class="title">Links</p>
 				</li>
 				<li class="children-link">
-					<router-link to="/backoffice/catalog/products">Products</router-link>
+					<router-link to="/backoffice/catalog/products" @click.native.prevent="vue.showChild()" >Products</router-link>
 				</li>
 				<li class="children-link">
-					<router-link to="/backoffice/catalog/categories">Categories</router-link>
+					<router-link to="/backoffice/catalog/categories" @click.native.prevent="vue.showChild()" >Categories</router-link>
 				</li>
 			</ul>
 		</div>
